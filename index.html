@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Organizador de Tareas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <input type="date" id="fechaVencimientoBusqueda">
+    <input type="hidden" id="proyectoIdBusqueda" value="1">
+    <button id="buscarButton" onclick="buscarTareasPorFecha()">Buscar</button>
+    <div id="resultadosBusqueda"></div>
+
+    <div id="app">
+        <h1>Organizador de Tareas</h1>
+        <div class="input-section">
+            <input type="text" id="nombreProyecto" placeholder="Nombre del Proyecto">
+            <input type="text" id="descripcionProyecto" placeholder="Descripción del Proyecto">
+            <button onclick="agregarProyecto()">Agregar Proyecto</button>
+        </div>
+        <div id="listaProyectos" class="project-list"></div>
+    </div>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="cerrarModal()">&times;</span>
+            <h2>Agregar Tarea</h2>
+            <input type="text" id="nombreTareaModal2" placeholder="Nombre de la Tarea">
+            <input type="text" id="nombreTareaModal" placeholder="Descripción de la Tarea">
+            <input type="date" id="fechaVencimientoModal">
+            <select id="estadoTareaModal">
+                <option value="pendiente">Pendiente</option>
+                <option value="completada">Completada</option>
+            </select>
+            <select id="proyectosModal"></select>
+            <button onclick="agregarTarea()">Agregar Tarea</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
